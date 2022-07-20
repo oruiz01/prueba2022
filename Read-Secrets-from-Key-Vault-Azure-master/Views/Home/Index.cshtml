@@ -9,7 +9,7 @@
     <fieldset>
         <legend>Read Secrets from Azure Key Vault</legend>
         <legend>Net Core 3.1 & Azure</legend>
-        <img src="~/images/kaizen-force.png" />
+        
 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -24,13 +24,13 @@
     <table>
         <tr>
             <td>@Html.Label("Connection String")</td>
-            <td>@Html.TextBoxFor(a => a.ConnectionStringKeyVault, new { @Value = Model.ConnectionStringKeyVault })</td>
-            <td>@Html.ValidationMessageFor(a => a.ConnectionStringKeyVault)</td>
+            <td>@Html.Label(Model.ConnectionStringKeyVault)</td>
+            
         </tr>
         <tr>
             <td>@Html.Label("Token Key")</td>
-            <td>@Html.TextBoxFor(a => a.TokenKeyVault, new { @Value = Model.TokenKeyVault })</td>
-            <td>@Html.ValidationMessageFor(a => a.TokenKeyVault)</td>
+            <td>@Html.Label(Model.TokenKeyVault)</td>
+            
         </tr>
     </table>
 

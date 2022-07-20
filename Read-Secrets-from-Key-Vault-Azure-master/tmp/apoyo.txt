@@ -1,0 +1,261 @@
+
+
+Para el WebApp project:
+
+1. Instalamos el modulo: C# Extensions
+
+2. Creamos una carpeta para el proyecto
+
+3. Abrimos la carpeta en VSC
+
+4. Creamos el siguiente proyecto:
+	dotnet --version
+	dotnet new mvc --name MyFirstMVCApp -f netcoreapp3.1
+	dotnet new mvc --name MyFirstMVCApp
+		Esto crea la estructura del proyecto 
+		
+5. Nos solicita anexar componentes.
+	Indicamos que si. 
+	
+	
+	
+
+
+6. Para crear un proyecto para una versión en específico
+PS D:\Azure-2022\AZ-400-PruebasOR\ejemploW5> dotnet new mvc --name MyFirstMVCApp -f 3.1
+Error: Opción u opciones no válidas:
+-f 3.1
+   "3.1" no es un valor válido para "-f". Los valores posibles son los siguientes:
+      net5.0          - Target net5.0
+      net6.0          - Target net6.0
+      netcoreapp3.1   - Target netcoreapp3.1
+
+Para obtener más información, ejecute:
+   dotnet new mvc -h
+PS D:\Azure-2022\AZ-400-PruebasOR\ejemploW5> dotnet new mvc --name MyFirstMVCApp -f netcoreapp3.1
+https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new-sdk-templates#web-options 
+
+
+
+
+	
+7. Para ejecutar la aplicación
+	PS D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp> dotnet run
+	
+	
+8. Para publicar 
+	az login
+	
+	
+9. Listamos las WebApp del resource group
+PS D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp> az webapp list --resource-group ejemploWebApp
+[
+  {
+    "appServicePlanId": "/subscriptions/2865137c-b550-4123-93e5-9a2bc070b1cb/resourceGroups/ejemploWebApp/providers/Microsoft.Web/serverfarms/MyAPpServicePlan",
+    "availabilityState": "Normal",
+    "clientAffinityEnabled": true,
+    "clientCertEnabled": false,
+    "clientCertExclusionPaths": null,
+    "clientCertMode": "Required",
+    "cloningInfo": null,
+    "containerSize": 0,
+    "customDomainVerificationId": "CEE2A8488091E8204E6DB405C73C3A45B3DD5D22CCFB95DDA5E6D9BF4162CC80",
+    "dailyMemoryTimeQuota": 0,
+    "defaultHostName": "mywebapposcar.azurewebsites.net",
+    "enabled": true,
+    "enabledHostNames": [
+      "mywebapposcar.azurewebsites.net",
+      "mywebapposcar.scm.azurewebsites.net"
+    ],
+    "hostNameSslStates": [
+      {
+        "hostType": "Standard",
+        "ipBasedSslResult": null,
+        "ipBasedSslState": "NotConfigured",
+        "name": "mywebapposcar.azurewebsites.net",
+        "sslState": "Disabled",
+        "thumbprint": null,
+        "toUpdate": null,
+        "toUpdateIpBasedSsl": null,
+        "virtualIp": null
+      },
+      {
+        "hostType": "Repository",
+        "ipBasedSslResult": null,
+        "ipBasedSslState": "NotConfigured",
+        "name": "mywebapposcar.scm.azurewebsites.net",
+        "sslState": "Disabled",
+        "thumbprint": null,
+        "toUpdate": null,
+        "toUpdateIpBasedSsl": null,
+        "virtualIp": null
+      }
+    ],
+    "hostNames": [
+      "mywebapposcar.azurewebsites.net"
+    ],
+    "hostNamesDisabled": false,
+    "hostingEnvironmentProfile": null,
+    "httpsOnly": true,
+    "hyperV": false,
+    "id": "/subscriptions/2865137c-b550-4123-93e5-9a2bc070b1cb/resourceGroups/ejemploWebApp/providers/Microsoft.Web/sites/MyWebAppOscar",
+    "identity": null,
+    "inProgressOperationId": null,
+    "isDefaultContainer": null,
+    "isXenon": false,
+    "kind": "app",
+    "lastModifiedTimeUtc": "2022-07-18T22:06:20.943333",
+    "location": "East US",
+    "maxNumberOfWorkers": null,
+    "name": "MyWebAppOscar",
+    "outboundIpAddresses": "20.121.181.240,20.237.73.136,20.237.77.229,20.237.78.22,20.85.132.26,20.237.78.25,20.119.0.21",
+    "possibleOutboundIpAddresses": "20.121.181.240,20.237.73.136,20.237.77.229,20.237.78.22,20.85.132.26,20.237.78.25,20.237.78.68,20.237.78.102,20.237.78.127,20.121.183.254,20.237.78.248,20.237.79.6,20.237.79.37,20.121.180.135,20.237.79.40,20.237.79.69,20.237.79.144,20.246.200.103,20.237.73.35,20.246.200.115,20.246.200.123,20.246.200.189,20.246.201.37,20.81.102.206,20.81.102.207,20.81.103.133,20.121.177.162,20.121.177.163,20.237.72.228,20.237.73.69,20.119.0.21",
+    "redundancyMode": "None",
+    "repositorySiteName": "MyWebAppOscar",
+    "reserved": false,
+    "resourceGroup": "ejemploWebApp",
+    "scmSiteAlsoStopped": false,
+    "siteConfig": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": true,
+      "antivirusScanEnabled": null,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": null,
+      "appSettings": null,
+      "autoHealEnabled": null,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureMonitorLogCategories": null,
+      "azureStorageAccounts": null,
+      "connectionStrings": null,
+      "cors": null,
+      "customAppPoolIdentityAdminState": null,
+      "customAppPoolIdentityTenantState": null,
+      "defaultDocuments": null,
+      "detailedErrorLoggingEnabled": null,
+      "documentRoot": null,
+      "experiments": null,
+      "fileChangeAuditEnabled": null,
+      "ftpsState": null,
+      "functionAppScaleLimit": 0,
+      "functionsRuntimeScaleMonitoringEnabled": null,
+      "handlerMappings": null,
+      "healthCheckPath": null,
+      "http20Enabled": false,
+      "http20ProxyFlag": null,
+      "httpLoggingEnabled": null,
+      "ipSecurityRestrictions": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "limits": null,
+      "linuxFxVersion": "",
+      "loadBalancing": null,
+      "localMySqlEnabled": null,
+      "logsDirectorySizeLimit": null,
+      "machineKey": null,
+      "managedPipelineMode": null,
+      "managedServiceIdentityId": null,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": null,
+      "minimumElasticInstanceCount": 0,
+      "netFrameworkVersion": null,
+      "nodeVersion": null,
+      "numberOfWorkers": 1,
+      "phpVersion": null,
+      "powerShellVersion": null,
+      "preWarmedInstanceCount": null,
+      "publicNetworkAccess": null,
+      "publishingPassword": null,
+      "publishingUsername": null,
+      "push": null,
+      "pythonVersion": null,
+      "remoteDebuggingEnabled": null,
+      "remoteDebuggingVersion": null,
+      "requestTracingEnabled": null,
+      "requestTracingExpirationTime": null,
+      "routingRules": null,
+      "runtimeADUser": null,
+      "runtimeADUserPassword": null,
+      "scmIpSecurityRestrictions": null,
+      "scmIpSecurityRestrictionsUseMain": null,
+      "scmMinTlsVersion": null,
+      "scmType": null,
+      "sitePort": null,
+      "storageType": null,
+      "supportedTlsCipherSuites": null,
+      "tracingOptions": null,
+      "use32BitWorkerProcess": null,
+      "virtualApplications": null,
+      "vnetName": null,
+      "vnetPrivatePortsCount": null,
+      "vnetRouteAllEnabled": null,
+      "webSocketsEnabled": null,
+      "websiteTimeZone": null,
+      "winAuthAdminState": null,
+      "winAuthTenantState": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    },
+    "slotSwapStatus": null,
+    "state": "Running",
+    "suspendedTill": null,
+    "systemData": null,
+    "tags": {},
+    "targetSwapSlot": null,
+    "trafficManagerHostNames": null,
+    "type": "Microsoft.Web/sites",
+    "usageState": "Normal"
+  }
+]
+
+
+10. Compilamos:
+PS D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp>  dotnet build
+Microsoft (R) Build Engine versión 17.1.0+ae57d105c para .NET
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Determinando los proyectos que se van a restaurar...
+  Todos los proyectos están actualizados para la restauración.
+  MyFirstMVCApp -> D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp\bin\Debug\netcoreapp3.1\MyFirstMVCApp.dll
+  MyFirstMVCApp -> D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp\bin\Debug\netcoreapp3.1\MyFirstMVCApp.Views.dll
+
+Compilación correcta.
+    0 Advertencia(s)
+    0 Errores
+
+Tiempo transcurrido 00:00:01.48
+
+11. Creamos el paquete a plubicar
+	Indicamos que lo deje en la carpeta publish 
+	
+PS D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp> dotnet publish -c Release -o ./publish
+Microsoft (R) Build Engine versión 17.1.0+ae57d105c para .NET
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Determinando los proyectos que se van a restaurar...
+  Todos los proyectos están actualizados para la restauración.
+  MyFirstMVCApp -> D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp\bin\Release\netcoreapp3.1\MyFirstMVCApp.dll
+  MyFirstMVCApp -> D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp\bin\Release\netcoreapp3.1\MyFirstMVCApp.Views.dll
+  MyFirstMVCApp -> D:\Azure-2022\AZ-400-PruebasOR\ejemploW5\MyFirstMVCApp\publish\
+  
+ 
+12. Para publicar:
+	Ingresamos a VSC
+	Seleccionamos la carpeta publish
+	Botón derecho:  Deploy To a Web App
+		Indicamos la suscripción
+		Indicamos la WebApp 
+		
+
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-6.0
+
+
+
+
+
+	

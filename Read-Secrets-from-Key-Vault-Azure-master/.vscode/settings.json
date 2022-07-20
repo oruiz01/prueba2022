@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2865137c-b550-4123-93e5-9a2bc070b1cb/microsoft.web/sites/subscriptions/2865137c-b550-4123-93e5-9a2bc070b1cb/resourceGroups/myResourceGroup/providers/Microsoft.Web/sites/myWebAppOscar",
+    "appService.deploySubpath": "publish"
+}

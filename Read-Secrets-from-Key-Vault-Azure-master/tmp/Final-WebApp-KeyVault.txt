@@ -1,0 +1,77 @@
+s
+1. Cremos el Key Vault:  DemoKeyVaultKF19072022
+		
+2. Creamos los valores
+	TokenAppKF    				TokenValue19072022
+	DBConnectionStringKF		DBConnectionValue19072022
+
+3. Registramos el APP en el active Directory
+	<AD> / Manage / App registrations / New Registration
+	Name:  DemoKFAppIdentity2
+	Seleccionamos:  Accounts in this organizational directory only (Directorio predeterminado only - Single tenant)
+	Reirect URI: 
+		Web / vacío
+	Register
+
+4. Identificamos los siguientes valores:
+	Application (client) ID: 97841086-75f0-4bec-8e17-215df182f960 <====== (1)
+	Object ID: 524096b8-c9c9-49ef-a261-d526aad5dd7e
+	Directory (tenant) ID: 50533e69-025d-43fc-a933-2c328ec6bcc7  
+
+5. Ingresamos a Certificates & Secrets 
+	<AD> / AppRegistration / DemoKFAppIdentity2 / Manage / Certificates & Secrets / New Client Secret
+	Name: MyClientKFSecret
+	Vigencia: 12 months 
+	
+	Datos obtenidos:
+	(*)Value: 		FaZ8Q~JHmap8vagGzQf.2-~XNxiSej9rML4DNaT0      <====== (2)
+	SecretID: 	2c931889-de04-42a6-a52f-a487e8705072
+	
+	Values: nos permitirá acceder al servicio a nuestras credenciales
+	
+	
+6. Definimos politicas de acceso en el keyvault
+	Key Vaults / DemoKeyVaultKF / Settings / Access Policies / Add Access Policies
+	
+	Configure from template:  	Secret Managment 
+	Key Permissions:			0
+	Secret Permissions:			GET, LIST
+	Certificate Permissions:	0
+	Select Principal:			DemoKFAppIdentity2
+	
+	
+	Aquí idicamos que aplicación puede acceder al key vault
+	
+	
+	
+7. En VSC instalamos el siguiente paquete:
+	func extensions install --package Microsoft.Extensions.Configuration.AzureKeyVault --version 3.1.6	
+	Install-Package Microsoft.Extensions.Configuration.AzureKeyVault -Version 3.1.6
+	
+8. Editamos appsettings.json
+
+9. Compilamos:   dotnet build
+
+10. Ejecutamos de forma local: 	 dotnet run
+
+11. Creamos el paquete en la carpeta publish 
+	dotnet publish -c Release -o ./publish
+	
+	
+
+
+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
+https://www.youtube.com/watch?v=ZTOGfpMDn30 
+https://github.com/jvargasipince/Read-Secrets-from-Key-Vault-Azure
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
